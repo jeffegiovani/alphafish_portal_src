@@ -1,0 +1,99 @@
+
+[x-cloak] {
+  display: none !important;
+}
+
+.non-scaling-stroke *,
+.outline-icon {
+  vector-effect: non-scaling-stroke
+}
+
+.outline-icon {
+  stroke-width: 2px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: transparent;
+  vector-effect: non-scaling-stroke;
+}
+
+.transition-fade {
+  transition: opacity 80ms;
+  opacity: 1;
+}
+
+html.is-animating .transition-fade {
+  opacity: 0;
+}
+
+/**
+ * This injects Tailwind's base styles and any base styles registered by
+ * plugins.
+ */
+@tailwind base;
+
+/**
+ * This injects Tailwind's component classes and any component classes
+ * registered by plugins.
+ */
+@tailwind components;
+
+/**
+ * This injects Tailwind's utility classes and any utility classes registered
+ * by plugins.
+ */
+@tailwind utilities;
+
+@import "forms";
+@import "modal";
+
+body{
+  font-family: 'Heebo', sans-serif;
+  line-height: 1.5;
+}
+
+.container{
+  width: 90%;
+  max-width: 1220px;
+}
+
+.bg-img-blue-1{
+  background-image: url('/static-files/portal/img/bg-blue-1.jpg');
+  background-position: center bottom;
+  background-size: cover;
+}
+
+.bg-img-fish-pattern{
+  background-image: url('/static-files/portal/img/fish-pattern.png');
+  background-position: center;
+  background-repeat: repeat;
+}
+
+.drop-down-menu{
+  visibility: hidden;
+  position: absolute;
+  left: 0;
+  margin-top: 3.5rem;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  border-radius: 0.5rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgba(226, 232, 240, var(--tw-border-opacity));
+  --tw-bg-opacity: 1;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  opacity: 0;
+  --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-duration: 500ms;
+}
+.group:hover .drop-down-menu{
+  visibility: visible;
+  margin-top: 1rem;
+  opacity: 1;
+}
