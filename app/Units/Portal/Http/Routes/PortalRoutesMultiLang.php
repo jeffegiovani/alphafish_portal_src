@@ -75,18 +75,6 @@ class PortalRoutesMultiLang extends RoutesFile
                  * Products
                  */
                 $this->router
-                    ->get('nitrometano', [ProductController::class, 'nitrometano'])
-                    ->name($locale_prefix . '_nitrometano');
-
-                $this->router
-                    ->get('metanol', [ProductController::class, 'metanol'])
-                    ->name($locale_prefix . '_metanol');
-
-                $this->router
-                    ->get('m5', [ProductController::class, 'm5'])
-                    ->name($locale_prefix . '_m5');
-
-                $this->router
                     ->get(trans('portal::routes.list_products', [], $locale_prefix), [ProductController::class, 'list'])
                     ->name($locale_prefix . '_list');
 
